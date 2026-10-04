@@ -26,7 +26,7 @@ export default function ServicePage() {
   const [error, setError] = useState('')
   const selectedDevice = device === 'Otro' ? other.trim() : device
   const phoneValid = !phone || /^(?:549?351|351)\d{6,8}$/.test(phone.replace(/[^\d]/g, ''))
-  const canSend = Boolean(selectedDevice && description.trim().length >= 10 && name.trim().length >= 2 && phoneValid && !honeypot)
+  const canSend = Boolean(selectedDevice && description.trim().length >= 1 && name.trim().length >= 2 && phoneValid && !honeypot)
   const descriptionCount = description.length
   const message = useMemo(() => `Hola DinoTech! Quiero consultar por servicio técnico.\nDispositivo: ${selectedDevice}${model.trim() ? ` ${model.trim()}` : ''}\nDetalle: ${description.trim()}\nNombre: ${name.trim()}`, [selectedDevice, model, description, name])
 
